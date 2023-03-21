@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="inventoryModel"
+            type="com.nada.tech.model.InventoryModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:elevation="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <include
+            android:id="@+id/headerView"
+            layout="@layout/layout_bottomsheet_header" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingVertical="@dimen/_3sdp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/part_number)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/part_number" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtPartNumber"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.partNumber}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="Furniture" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/asset_id_name)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/asset_id_name" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtAssetName"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.assetName}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="Chair 101" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/location)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/location" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtLocation"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.location}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="Warehouse 1" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/tag_id)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/tag_id" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtTagID"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.tagData}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="E10125364A54ASDF" />
+                </TableRow>
+            </TableLayout>
+
+            <com.nada.tech.views.TextView
+                style="@style/TextViewStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@{String.format(@string/string_with_colon, @string/description)}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9ssp"
+                tools:text="@string/description" />
+
+            <com.nada.tech.views.TextView
+                android:id="@+id/txtDescription"
+                style="@style/TextViewStyleRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@{inventoryModel.formattedAssetNotes}"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/_9ssp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:orientation="vertical">
+
+                <TableRow>
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/serial_number)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/serial_number" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtSerialNumber"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.serialNumber}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/expiry_date)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/expiry_date" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtExpiryDate"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.expiryDate}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/asset_allow_to_move)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/asset_allow_to_move" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtIsMoveable"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.isMoveable()}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/asset_status)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/asset_status" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtAssetStatus"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.assetStatus}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:visibility="gone">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.format(@string/string_with_colon, @string/checked_out_to)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="@string/checked_out_to" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/txtCheckedOutTo"
+                        style="@style/TextViewStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@{inventoryModel.location}"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_9ssp" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btnLocate"
+                style="@style/ButtonWhiteStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:minWidth="@dimen/_120sdp"
+                android:textSize="@dimen/_9ssp"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:text="@string/locate_item" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

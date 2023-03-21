@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="inventoryModel"
+            type="com.nada.tech.model.InventoryModel" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/card_bg_light"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_3sdp"
+        app:cardUseCompatPadding="false"
+        app:strokeColor="@color/card_stock"
+        app:strokeWidth="1dp">
+
+        <TableLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <TableRow>
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/string_with_colon, @string/part_number)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="@string/part_number" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtPartNumber"
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@{inventoryModel.partNumber}"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="Furniture" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/string_with_colon, @string/asset_id_name)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="@string/asset_id_name" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtAssetName"
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@{inventoryModel.assetName}"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="Chair 101" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/_3sdp">
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/string_with_colon, @string/location)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="@string/location" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtLocation"
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@{inventoryModel.location}"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="Warehouse 1" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/_5sdp">
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/string_with_colon, @string/tag_id)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="@string/tag_id" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtTagID"
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@{inventoryModel.tagData}"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="E10125364A54ASDF" />
+            </TableRow>
+        </TableLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

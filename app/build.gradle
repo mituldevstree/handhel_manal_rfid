@@ -1,0 +1,142 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def DEV_BASE_URL = "http://pashupati.storeerp.in/"
+def LIVE_BASE_URL = "http://pashupati.storeerp.in/"
+
+def ROOT_URL = DEV_BASE_URL
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.nada.tech"
+        minSdk 24
+        targetSdk 32
+        versionCode 6
+        versionName "1.5"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        externalNativeBuild {
+//            cmake {
+//                abiFilters "armeabi"
+//            }
+//        }
+//        ndk.abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+        buildConfigField("String", "BASE_URL", "\"" + ROOT_URL + "\"")
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('/home/user/Mitul/WorkSpace/gitlab/rifd-manal/app/detail/keystore.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'nadatech'
+        }
+        release {
+            storeFile file('/home/user/Mitul/WorkSpace/gitlab/rifd-manal/app/detail/keystore.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'nadatech'
+        }
+    }
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [enableCrashReporting: "true"]
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [enableCrashReporting: "true"]
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                def formattedDate = new Date().format('ddMMyyyy')
+                outputFileName = "Nada_Tech_v${variant.versionCode}_" + formattedDate + ".apk"
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ["src/main/jniLibs"]
+//        }
+//    }
+//    ndkVersion '23.1.7779620'
+}
+
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation files('libs/DeviceAPI_ver20220323_release.aar')
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    // image processing
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+
+    // dependency-injection
+    implementation "com.google.dagger:hilt-android:2.41"
+    kapt "com.google.dagger:hilt-compiler:2.41"
+
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+
+    // Activity KTX for viewModels()
+    implementation "androidx.activity:activity-ktx:1.4.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
+
+    // networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // third-party library support
+    implementation 'joda-time:joda-time:2.10.10'
+    implementation 'com.github.Kaopiz:KProgressHUD:1.0'
+    implementation 'com.github.Ferfalk:SimpleSearchView:0.2.0'
+    implementation 'com.github.DhavalBaldhaa:AndroidFilePicker:1.0.2'
+    implementation 'com.github.stfalcon-studio:StfalconImageViewer:v1.0.1'
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0'
+}
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'

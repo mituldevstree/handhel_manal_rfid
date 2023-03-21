@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="partModel"
+            type="com.nada.tech.model.PartModel" />
+
+        <variable
+            name="location"
+            type="com.nada.tech.model.PopupModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.AssetRegistrationActivity">
+
+        <include layout="@layout/layout_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_16sdp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputPartNumber"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:endIconDrawable="@drawable/ic_arrow_drop_down"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtPartNumber"
+                        style="@style/EditTextStyleClickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/part_number"
+                        android:imeOptions="actionNext"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:tag="@{partModel.partId}"
+                        android:text="@{partModel.partNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputDescription"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtDescription"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:enabled="false"
+                        android:gravity="start"
+                        android:hint="@string/description"
+                        android:text="@{partModel.description}"
+                        android:textColor="@color/disabled" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/asset_properties"
+                    android:textSize="@dimen/_13ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputAssetName"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtAssetName"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/asset_id_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputSrNo"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtSrNo"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/serial_number"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputExpDate"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:endIconDrawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtExpiryDate"
+                        style="@style/EditTextStyleClickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/expiry_date"
+                        android:imeOptions="actionNext"
+                        android:onClick="@{(v)->clickListener.onClick(v)}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputNote"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtNote"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:hint="@string/notes_optional"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:lines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputLocation"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:endIconDrawable="@drawable/ic_arrow_drop_down"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtLocation"
+                        style="@style/EditTextStyleClickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/location"
+                        android:imeOptions="actionNext"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:tag="@{location.id}"
+                        android:text="@{location.value}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swMoveable"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:checked="true"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_3sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/asset_allow_to_move" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@color/colorLineGray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.nada.tech.views.TextView
+                        style="@style/TextViewStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tag_id" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/btnTagScan"
+                        style="@style/TextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:selectableItemBackground"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:text="@string/scan_tag_id"
+                        android:textColor="@color/colorPrimary" />
+
+                    <View
+                        android:id="@+id/viewReset"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@color/colorLineGray"
+                        android:visibility="gone" />
+
+                    <com.nada.tech.views.TextView
+                        android:id="@+id/btnReset"
+                        style="@style/TextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:selectableItemBackground"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:text="@string/clear_all"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@color/colorLineGray" />
+
+                <LinearLayout
+                    android:id="@+id/linTagDataView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/row_scan_tag" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@color/colorLineGray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.nada.tech.views.TextView
+                            android:id="@+id/txtTotalTags"
+                            style="@style/TextViewStyleRegular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_scanned_s" />
+
+                        <com.nada.tech.views.TextView
+                            android:id="@+id/btnViewAllTag"
+                            style="@style/TextViewStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?android:selectableItemBackground"
+                            android:onClick="@{(v)->clickListener.onClick(v)}"
+                            android:paddingHorizontal="@dimen/_5sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="@string/view_all"
+                            android:textColor="@color/colorPrimary" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@color/colorLineGray" />
+                </LinearLayout>
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/asset_image" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:paddingHorizontal="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAddImage"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_3sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:onClick="onClick"
+                            app:cardBackgroundColor="@color/lightest_grey"
+                            app:cardCornerRadius="@dimen/_8sdp"
+                            app:cardElevation="@dimen/_2sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_plus"
+                                tools:ignore="ContentDescription" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvPhoto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/cardAddImage"
+                            android:isScrollContainer="false"
+                            android:orientation="horizontal"
+                            android:scrollbars="none"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_add_image" />
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/btnCreate"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:minWidth="@dimen/_150sdp"
+                    android:onClick="@{(v)->clickListener.onClick(v)}"
+                    android:text="@string/register_asset" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

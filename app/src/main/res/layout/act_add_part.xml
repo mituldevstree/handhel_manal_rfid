@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+
+        <variable
+            name="partModel"
+            type="com.nada.tech.model.PartModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.AssetRegistrationActivity">
+
+        <include layout="@layout/layout_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_16sdp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputPartName"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtPartName"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:hint="@string/please_enter_part_name"
+                        android:text="@{partModel.partName}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputAssetType"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:endIconDrawable="@drawable/ic_arrow_drop_down"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtAssetType"
+                        style="@style/EditTextStyleClickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/asset_type"
+                        android:imeOptions="actionNext"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:tag="@{partModel.partId}"
+                        android:text="@{partModel.partNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputCategory"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:endIconDrawable="@drawable/ic_arrow_drop_down"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtCategory"
+                        style="@style/EditTextStyleClickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/asset_category"
+                        android:imeOptions="actionNext"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:tag="@{partModel.partId}"
+                        android:text="@{partModel.partNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvInputManufacture"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:endIconDrawable="@drawable/ic_arrow_drop_down"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtManufacture"
+                        style="@style/EditTextStyleClickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/manufactor"
+                        android:imeOptions="actionNext"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:tag="@{partModel.partId}"
+                        android:text="@{partModel.partNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvDescription"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:hintEnabled="true">
+
+                    <com.nada.tech.views.EditText
+                        android:id="@+id/edtDescription"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start|top"
+                        android:hint="@string/description_optional"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:minHeight="@dimen/_100sdp"
+                        android:text="@{partModel.description}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/rdExpired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/isexpired" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/idSerial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/isserial" />
+
+                <Button
+                    android:id="@+id/btnCreate"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:minWidth="@dimen/_150sdp"
+                    android:onClick="@{(v)->clickListener.onClick(v)}"
+                    android:text="@string/submit" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

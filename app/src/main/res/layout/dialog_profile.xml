@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.nada.tech.model.User" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/drawable_dialog_background"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:text="@string/profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/grey" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp">
+
+            <TableRow>
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/string_with_colon, @string/username)}"
+                    android:textColor="@color/black"
+                    tools:text="@string/username" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtPartNumber"
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@{user.userName}"
+                    android:textColor="@color/textColorSecondary"
+                    tools:text="Dhaval123" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/_8sdp">
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="@dimen/_60sdp"
+                    android:text="@{String.format(@string/string_with_colon, @string/email_id)}"
+                    android:textColor="@color/black"
+                    tools:text="@string/email_id" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtAssetName"
+                    style="@style/TextViewStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@{user.email}"
+                    android:textColor="@color/textColorSecondary"
+                    tools:text="dhaval@gmail.com" />
+            </TableRow>
+        </TableLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNegative"
+            style="@style/ButtonWhiteStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:gravity="center"
+            android:minWidth="@dimen/_120sdp"
+            android:onClick="@{listener::onClick}"
+            android:text="@string/close"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="visible" />
+    </LinearLayout>
+</layout>

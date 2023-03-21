@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nada.tech">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".Controller"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.activity.VoiceActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_picker_provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme.White" />
+        <activity
+            android:name=".ui.activity.AssetRegistrationActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.DashboardActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.ScanRFIDActivity"
+            android:screenOrientation="locked" />
+        <activity android:name=".ui.activity.FindInventoryActivity" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="locked"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.InventoryActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.LocationActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.AddLocationActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.AddPartActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.AddAssetTypeActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.AddAssetCategoryActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.AddManufactorActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.AddManufacturerActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.activity.PartListActivity"
+            android:screenOrientation="locked" />
+    </application>
+
+</manifest>

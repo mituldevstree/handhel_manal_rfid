@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.DashboardActivity">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <TextClock
+        android:id="@+id/textClockDate"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:format12Hour="dd MMM yyyy hh:mm a"
+        android:format24Hour="dd MMM yyyy hh:mm a"
+        android:textSize="@dimen/_11ssp"
+        tools:text="15 Mar 2021 12:40 PM" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:columnCount="3">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linCheckIn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgCheckIn"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_checkin"
+                    android:tint="@color/click_color_primary" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtCheckIn"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/check_in"
+                    android:textColor="@color/click_color_primary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linCheckOut"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgCheckOut"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_checkout"
+                    android:tint="@color/click_color_primary" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtCheckOut"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/check_out"
+                    android:textColor="@color/click_color_primary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linLocation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_location"
+                    android:tint="@color/card_content" />
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/location"
+                    android:textColor="@color/card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linMove"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_move"
+                    android:tint="@color/card_content" />
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/move_item"
+                    android:textColor="@color/card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linAssetRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgAssetRegistration"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_add_asset"
+                    android:tint="@color/click_color_primary" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtAssetRegistration"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="@string/assets_registration"
+                    android:textColor="@color/click_color_primary"
+                    android:textSize="@dimen/_9ssp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linInventory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgInventory"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_inventory"
+                    android:tint="@color/click_color_primary" />
+
+                <com.nada.tech.views.TextView
+                    android:id="@+id/txtInventory"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/inventory"
+                    android:textColor="@color/click_color_primary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:tint="@color/card_content" />
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/search_hint"
+                    android:textColor="@color/card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linFind"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_find_item"
+                    android:tint="@color/card_content" />
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/find_item"
+                    android:textColor="@color/card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/card_stock"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/linLogout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/ic_logout"
+                    android:tint="@color/card_content" />
+
+                <com.nada.tech.views.TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/logout"
+                    android:textColor="@color/card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </GridLayout>
+
+</LinearLayout>

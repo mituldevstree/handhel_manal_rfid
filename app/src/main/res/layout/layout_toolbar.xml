@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:elevation="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetRight="0dp"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false">
+
+                        <RelativeLayout
+                            android:id="@+id/layoutStart"
+                            android:layout_width="?android:attr/actionBarSize"
+                            android:layout_height="?android:attr/actionBarSize">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgBack"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:background="?android:selectableItemBackgroundBorderless"
+                                android:onClick="onClick"
+                                android:padding="@dimen/_8sdp"
+                                android:src="@drawable/ic_back_white"
+                                android:visibility="visible"
+                                tools:visibility="visible" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgLogo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:background="?android:selectableItemBackgroundBorderless"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@mipmap/ic_launcher_round"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtToolbarTitle"
+                                style="@style/TextViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/app_name"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtSubTitle"
+                                style="@style/TextViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_minus2sdp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/app_name"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:minWidth="?android:attr/actionBarSize">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgProfile"
+                                android:layout_width="?android:attr/actionBarSize"
+                                android:layout_height="match_parent"
+                                android:background="?android:selectableItemBackgroundBorderless"
+                                android:onClick="onClick"
+                                android:padding="@dimen/_11sdp"
+                                android:src="@drawable/ic_user"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgOption"
+                                android:layout_width="?android:attr/actionBarSize"
+                                android:layout_height="match_parent"
+                                android:background="?android:selectableItemBackgroundBorderless"
+                                android:onClick="onClick"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/ic_option_white"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgActionDone"
+                                android:layout_width="?android:attr/actionBarSize"
+                                android:layout_height="match_parent"
+                                android:background="?android:selectableItemBackgroundBorderless"
+                                android:onClick="onClick"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/ic_done"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgBluetooth"
+                                android:layout_width="?android:attr/actionBarSize"
+                                android:layout_height="match_parent"
+                                android:background="?android:selectableItemBackgroundBorderless"
+                                android:onClick="onClick"
+                                android:padding="@dimen/_12sdp"
+                                android:src="@drawable/ic_settings_bluetooth"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+                <com.ferfalk.simplesearchview.SimpleSearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:backIconTint="@color/black"
+                    app:type="card"
+                    app:voiceSearch="false"
+                    tools:visibility="gone" />
+            </FrameLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/toolbarProgressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_minus5sdp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/white"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+</merge>

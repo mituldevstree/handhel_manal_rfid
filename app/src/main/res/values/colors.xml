@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0060A8</color>
+    <color name="colorPrimaryDark">#0060A8</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="textColorPrimary">#3B3B3B</color>
+    <color name="textColorSecondary">#71717A</color>
+    <color name="textColorHint">#4A4A4A</color>
+    <color name="disabled">#A6A6A6</color>
+
+    <color name="grey">#929292</color>
+    <color name="grey_dark">#3D3D3D</color>
+    <color name="divider_gray">#C4C4C4</color>
+    <color name="card_bg">#F3F3F3</color>
+    <color name="card_bg_light">#FBFBFB</color>
+    <color name="card_stock">#3B3B3B</color>
+    <color name="card_content">#3B3B3B</color>
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#72AE5A</color>
+
+    <color name="colorTextBlack">#000000</color>
+    <color name="colorTextWhite">#ffffff</color>
+    <color name="colorTextSecondary">#4A4A4A</color>
+    <color name="colorHintGray">#6C6C6C</color>
+    <color name="colorLineGray">#D6D6D6</color>
+
+    <color name="lightest_grey">#F0F0F0</color>
+    <color name="light_gray">#B2B2B2</color>
+    <color name="boarder_color">#E1E1E1</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="black_alpha_95">#F2000000</color>
+    <color name="black_alpha_85">#D9000000</color>
+    <color name="black_alpha_65">#A6000000</color>
+    <color name="black_alpha_55">#8C000000</color>
+    <color name="black_alpha_45">#73000000</color>
+    <color name="black_alpha_35">#59000000</color>
+    <color name="black_alpha_25">#40000000</color>
+    <color name="black_alpha_15">#26000000</color>
+    <color name="black_alpha_10">#1A000000</color>
+    <color name="black_alpha_5">#0D000000</color>
+    <color name="white_alpha_10">#1AFFFFFF</color>
+    <color name="white_alpha_15">#26FFFFFF</color>
+    <color name="white_alpha_25">#40FFFFFF</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+    <color name="white_alpha_85">#D9FFFFFF</color>
+    <color name="white_alpha_70">#B3FFFFFF</color>
+    <color name="white_alpha_55">#8CFFFFFF</color>
+    <color name="white_alpha_65">#A6FFFFFF</color>
+    <color name="white_alpha_95">#F2FFFFFF</color>
+
+    <color name="red">#FE0000</color>
+    <color name="dark_red">#EC2224</color>
+    <color name="dark_blue">#4782b9</color>
+    <color name="orange">#faa72a</color>
+    <color name="dark_orange">#FF9800</color>
+
+</resources>

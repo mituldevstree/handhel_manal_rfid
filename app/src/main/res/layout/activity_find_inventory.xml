@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.FindInventoryActivity">
+
+        <include layout="@layout/layout_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_12sdp">
+
+            <com.nada.tech.views.TextView
+                style="@style/TextViewStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_epc_for_find_item"
+                android:textSize="@dimen/_11ssp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tvInputEPC"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:hintEnabled="true">
+
+                <com.nada.tech.views.EditText
+                    android:id="@+id/edtEPC"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/epc"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <Button
+                    android:id="@+id/btnStartSearch"
+                    style="@style/ButtonWhiteStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_150sdp"
+                    android:onClick="@{(v)->clickListener.onClick(v)}"
+                    android:text="@string/start_search" />
+
+                <Button
+                    android:id="@+id/btnScan"
+                    style="@style/ButtonWhiteStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(v)->clickListener.onClick(v)}"
+                    android:text="@string/start_scan" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey" />
+
+        <com.nada.tech.views.TextView
+            android:id="@+id/txtSearchLbl"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_dark"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/searching_epc_item"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingVertical="@dimen/_5sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_rfid_tag" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_wifi_no_signal"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+</layout>

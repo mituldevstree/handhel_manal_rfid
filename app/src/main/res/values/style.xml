@@ -1,0 +1,218 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="TextViewStyle">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColorHint">@color/textColorSecondary</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="TextViewStyleRegular">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColorHint">@color/textColorSecondary</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="@style/ButtonStyle">
+        <item name="android:background">@drawable/radio_button_selector</item>
+        <item name="android:textColor">@drawable/radio_flat_text_selector</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="RadioStyle" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="CheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:buttonTint">@color/colorAccent</item>
+    </style>
+
+    <style name="DiamondButton" parent="ButtonStyle">
+        <item name="android:shape">rectangle</item>
+    </style>
+
+    <style name="ButtonWhiteStyle" parent="@style/TextViewStyle">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/button_bg_white</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <!--        <item name="android:background">@drawable/corner_top</item>-->
+    </style>
+
+    <style name="PasswordToggleTransparent" parent="AppTheme">
+        <item name="colorControlHighlight">#0000</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.Design.TextInputLayout">
+        <item name="colorPrimary">@color/textColorSecondary</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="boxStrokeColor">@color/dark_blue</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="hintTextAppearance">@style/InputLayoutHintAppearance</item>
+        <item name="hintEnabled">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_8sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_8sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_8sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_8sdp</item>
+    </style>
+
+    <style name="InputLayoutHintAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="hintTextColor">@color/textColorSecondary</item>
+    </style>
+
+    <style name="InputLayoutHintAppearanceDisble" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/disabled</item>
+        <item name="hintTextColor">@color/disabled</item>
+    </style>
+
+    <style name="EditTextStyleClickable" parent="EditTextStyle">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:editable">false</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">false</item>
+        <item name="android:inputType">none</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:textColor">@color/edt_text_color_primary</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:drawablePadding">@dimen/_2sdp</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:theme">@style/EditTextTheme</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingStart">@dimen/_12sdp</item>
+        <item name="android:paddingEnd">@dimen/_12sdp</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+    </style>
+
+    <style name="EditTextTheme">
+        <item name="colorControlNormal">@color/textColorSecondary</item>
+        <item name="colorControlActivated">@color/textColorSecondary</item>
+        <item name="hintTextColor">@color/textColorSecondary</item>
+        <item name="colorControlHighlight">@color/textColorSecondary</item>
+    </style>
+
+    <style name="ProgressStyledDialog">
+        <item name="android:bottomBright">@color/black</item>
+        <item name="android:bottomDark">@color/black</item>
+        <item name="android:bottomMedium">@color/black</item>
+        <item name="android:centerBright">@color/black</item>
+        <item name="android:centerDark">@color/black</item>
+        <item name="android:centerMedium">@color/black</item>
+        <item name="android:fullBright">@color/black</item>
+        <item name="android:fullDark">@color/black</item>
+        <item name="android:topBright">@color/black</item>
+        <item name="android:topDark">@color/black</item>
+        <item name="android:progressTint" tools:ignore="NewApi">@color/colorPrimary</item>
+        <item name="android:tint">@color/colorPrimary</item>
+    </style>
+
+    <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:popupBackground">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="popupTheme" parent="Theme.AppCompat.DayNight">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimary">@color/light_gray</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/grey</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <!--        <item name="buttonBarPositiveButtonStyle">@style/AlertPositiveButtonStyle</item>-->
+        <!--        <item name="buttonBarNegativeButtonStyle">@style/AlertNegativeButtonStyle</item>-->
+    </style>
+
+    <style name="AlertPositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="AlertNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetModal</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="BottomSheetModal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+</resources>

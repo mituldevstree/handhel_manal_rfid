@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "725202762639",
+    "project_id": "nada-tech",
+    "storage_bucket": "nada-tech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725202762639:android:1f782b410cd90b2a5d29fa",
+        "android_client_info": {
+          "package_name": "com.nada.tech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725202762639-chb6hh58lsqjs3e24m6209gcn018hce6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeH1AOEOeGUXpFoIifAi2FFj0UF-QQj0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725202762639-chb6hh58lsqjs3e24m6209gcn018hce6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
